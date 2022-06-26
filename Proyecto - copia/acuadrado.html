@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>practicas</title>
+ <style>
+
+.modal-contenido {
+      background-color: aqua;
+      width: 550px;
+      height: 480px;
+      padding: 10px 20px;
+      margin: 10% auto;
+      position:relative;
+      font-size: 24px;
+    }
+
+    .modal {
+      background-color: rgba(0, 0, 0, .8);
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 1s;
+    }
+
+    #miModal:target {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+
+
+    .btn-flotante {
+      font-size: 16px;
+      /* Cambiar el tamaño de la tipografia */
+      text-transform: uppercase;
+      /* Texto en mayusculas */
+      font-weight: bold;
+      /* Fuente en negrita o bold */
+      color: #ffffff;
+      /* Color del texto */
+      border-radius: 5px;
+      /* Borde del boton */
+      letter-spacing: 2px;
+      /* Espacio entre letras */
+      background-color: #E91E63;
+      /* Color de fondo */
+      padding: 18px 30px;
+      /* Relleno del boton */
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      transition: all 300ms ease 0ms;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+    }
+
+    .btn-flotante:hover {
+      background-color: #2c2fa5;
+      /* Color de fondo al pasar el cursor */
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-7px);
+    }
+
+    @media only screen and (max-width: 600px) {
+      .btn-flotante {
+        font-size: 14px;
+        padding: 12px 20px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    input[type=number] {
+      background-color: #8428ca;
+      color: rgb(0, 0, 0);
+      width: 200px;
+      height: 160px;
+      font-size: 30px;
+      margin: auto;
+      height: 30px;
+      outline: none;
+      border: 0;
+      text-align: center;
+
+    }
+
+    input::placeholder {
+      color: rgb(255, 255, 255);
+      font-size: 21pt;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-align: center;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+    .botonr {
+      background-color: #ff1111;
+      width: 130px;
+      height: 60px;
+      display: inline-block;
+      padding: 15px 30px;
+      transition: 0.2s;
+      border: aliceblue;
+      margin: auto;
+      height: 40px;
+      color: white;
+
+    }
+
+    .botonr:hover {
+      background: #ffffff;
+      box-shadow: 0 0 10px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+      color: rgb(0, 0, 0);
+
+    }
+
+    progress[value] {
+  width: 450px;
+  height: 10px;
+
+}
+
+ </style>
+                                       
+    <script>
+
+var notan = 0;
+var lado;
+        var txt;
+        var aciertos=0;
+        var fallos =0;
+        var oportunidades, prom;
+        var vp=0;
+
+
+window.addEventListener("load", ventana, false); 
+
+function ventana(){
+ 
+  location.href="#miModal";
+
+}
+
+function nota(){
+ 
+ 
+
+ if (notan==0) {
+  location.href="#miModalr";
+  notan++;
+ } else {
+   
+ }
+
+ 
+
+}
+
+function barra() {
+  vp=vp+10;
+document.getElementById("bprogreso").innerHTML="<progress max='100' value="+vp+"></progress>&nbsp;&nbsp;&nbsp;<span style='color:white; font-weight: bolder; font-size: 20px;'>"+vp+"%</span>";
+}
+       
+        
+
+     
+
+        
+            function proble(){
+                document.getElementById("audio").innerHTML="<audio autoplay><source src='cambio.mp3' type='audio/mpeg'></audio>";
+             lado = Math.floor(1+Math.random()*100);
+            
+            document.getElementById("problema").innerHTML="<p>¿Cuál es el área de un cuadrado, cuyos lados miden  <span style='color: red;'>"+lado+"</span>?</p>";
+            document.getElementById("tip").innerHTML="<p>Recuerda que Área = Lado²</p>";
+            }
+            window.addEventListener("load", proble, false); 
+            
+
+            
+            function redirec() {
+                location.href="inicio.html";
+            }
+
+
+        function verificar() {
+
+           
+            
+            var pr=document.getElementById("campoentrada").value;
+			var r = Math.pow(lado,2);
+            
+
+
+            if (oportunidades==10) {
+                
+            } else {
+                
+            
+            
+			if (pr==r) {
+                txt = Math.floor(1+Math.random()*4);
+                switch (txt) {
+                    case 1:
+                    document.getElementById("resultado").innerHTML="Muy bien ";
+                        break;
+
+                        case 2:
+                    document.getElementById("resultado").innerHTML="Excelente ";
+                        break;
+
+                        case 3:
+                    document.getElementById("resultado").innerHTML="Buen trabajo ";
+                        break;
+
+                        case 4:
+                    document.getElementById("resultado").innerHTML="Siga asi ";
+                        break;
+                
+                    default:
+                        break;
+                }
+                document.getElementById("valuacion").innerHTML="<audio autoplay><source src='acierto.mp3' type='audio/mpeg'></audio>";
+				aciertos++;
+                
+                document.getElementById("resultadoaciertos").innerHTML="Aciertos "+aciertos+" Fallos "+fallos;
+                proble();
+                document.getElementById("formulario").reset();
+			} else {
+                txt = Math.floor(1+Math.random()*4);
+                switch (txt) {
+                    case 1:
+                    document.getElementById("resultado").innerHTML="No, intente de nuevo ";
+                        break;
+
+                        case 2:
+                    document.getElementById("resultado").innerHTML="Equivocado. Trate una vez mas ";
+                        break;
+
+                        case 3:
+                    document.getElementById("resultado").innerHTML="No se de por vencido ";
+                        break;
+
+                        case 4:
+                    document.getElementById("resultado").innerHTML="No, siga intentando ";
+                        break;
+                
+                    default:
+                        break;
+                      
+                }
+                document.getElementById("valuacion").innerHTML="<audio autoplay><source src='error.mp3' type='audio/mpeg'></audio>";
+				fallos++;
+                document.getElementById("resultadoaciertos").innerHTML="Aciertos "+aciertos+" Fallos "+fallos;
+                proble();
+                document.getElementById("formulario").reset();
+			}
+            
+            oportunidades=fallos+aciertos;
+           if (oportunidades==10) {
+               prom = aciertos*10;
+               document.getElementById("resultado").innerHTML="Obtuviste un promedio de  "+prom+" Sobre 100 posibles (Sera redireccionado en 10 segundos)";
+               document.getElementById("audio").innerHTML="<audio autoplay><source src='rbien.mp3' type='audio/mpeg'></audio>";
+               fallos=0;
+               aciertos=0;
+               document.getElementById("formulario").reset();
+              
+               setTimeout ("redirec();", 9000); //tiempo expresado en milisegundos
+
+               document.getElementById("cuentar").innerHTML="<img src='cuenta2.gif' width='90' height='90' style='position: absolute; top: 0; left: 0;''> ";
+           } else {
+               
+           }
+
+           if (prom<75) {
+            document.getElementById("audio").innerHTML="<audio autoplay><source src='rmal.mp3' type='audio/mpeg'></audio>";
+            document.getElementById("ayuda").innerHTML="Pida ayuda adicional a su instructor ";
+           
+           } else {
+            
+           }
+           
+           
+        }
+        barra();
+           }
+        
+            
+
+    </script>
+</head>
+<body style="zoom: 75%;" background="fondoacuadrado.jpg">
+
+ 
+  <div style="text-shadow: 5px 2px 2px black; text-align: center;" id="bprogreso"></div>
+ 
+
+    <a href="inicio.html" class="btn-flotante">Regresar al menú</a>
+  
+    <div
+      style="text-shadow: 5px 2px 2px black; box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .15);
+    
+    backdrop-filter: blur(5px); width: 565px; font-weight: bolder; font-size: 30px; float: right; width: 190px; height: 300px; color: rgb(255, 255, 255); text-align: center; "
+      id="resultado"></div>
+    <div id="cuentar" style="float: right;"></div>
+  
+
+
+
+    <div style=" width: 30rem;
+      height: 20rem;
+      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, .15);
+      
+      backdrop-filter: blur(5px); width: 565px;
+      margin-left: auto;
+      margin-right: auto; width: 900px; height: 700px;">
+  
+  
+  
+  <div id="miModal" class="modal">
+  
+    <div class="modal-contenido">
+      <a style="float: right;" href="#">Cerrar</a>
+      <p><span style="color: green;">!HOLA¡</span> <br><br>
+        Te ofrezco este video explicativo del uso
+        de esta pagina. Suerte<br>
+        <video style="margin: 40px 3px 30px -77px;"  width="700" height="300" src="explicativo.mp4" autoplay controls >
+          Tu navegador no admite esta etiqueta.
+        </video>
+        
+      </p>
+    </div>
+  
+  </div>
+
+
+  
+  
+      <h1 style="text-shadow: 5px 2px 2px black; font-weight: bolder; font-size: 55px; text-align: center ; color: azure;">Área <span style="font-weight: bolder; font-size: 55px; text-align: center ; color: red;">Cuadrado</span></h1>
+      <div id="tip" style="text-shadow: 5px 2px 2px black; font-size: 33px; text-align: center; color: white; font-weight: bolder;"></div>
+  
+  
+      <div id="ayuda" style='text-shadow: 5px 2px 2px black; font-weight: bolder; font-size: 28px; text-align: center; color:rgb(255, 175, 1) ;'></div>
+  
+  
+      <form id="formulario" style="text-align: center;" action="#">
+  
+  
+        <div style="border: 9px dotted white;   margin: 110px 3px 30px 150px; width: 600px; height: 350px;"></br>
+            
+            <span id="resultadoaciertos"style='text-shadow: 5px 2px 2px black; font-weight: bolder; font-size: 28px; text-align: center; color:rgb(238, 255, 0) ;'> </span> 
+
+         <span id="problema" style='text-shadow: 5px 2px 2px black; font-weight: bolder; font-size: 30px;  color:rgb(247, 247, 247) ;'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <input onclick="nota();" placeholder="Respuesta" type="number" id="campoentrada">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
+          <br><br><br><br>
+          <button class="botonr" type="button" onclick="verificar();">
+            <div
+              style="margin: -6px 3px 30px -10px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bolder; right: 10px; font-size: 20px; ">
+              Responder</div>
+          </button>
+        </div>
+  
+      </form>
+  
+  
+    </div>
+  
+  
+  
+    <div id="audio"></div>
+    <div id="valuacion"></div>
+  
+  
+  </body>
+</html>
