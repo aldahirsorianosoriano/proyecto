@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" user-scalable="none" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mate Expres</title>
+  <link rel="stylesheet" href="estilos.css"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+ 
+  <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+
+.contenedor{
+  margin: 0 auto;
+   width: 900px;
+    height: 700px; 
+    backdrop-filter: blur(6px);
+     background-color: transparent;
+      box-shadow:0 0 30px rgb(0, 0, 0);
+}
+
+/* Escritorio extra grande */
+@media only screen and (min-width: 1200px){
+
+  .contenedor{
+  margin: 0 auto;
+   width: 900px;
+    height: 800px; 
+    backdrop-filter: blur(6px);
+     background-color: transparent;
+      box-shadow:0 0 30px rgb(0, 0, 0);
+  }
+
+  iframe{
+    width: 800px;
+    height: 350px; 
+  }
+
+}
+/* Escritorio grande */
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+
+  .contenedor{
+  margin: 0 auto;
+   width: 850px;
+    height: 800px; 
+    backdrop-filter: blur(6px);
+     background-color: transparent;
+      box-shadow:0 0 30px rgb(0, 0, 0);
+  }
+
+  iframe{
+    width: 700px;
+    height: 350px; 
+  }
+
+}
+
+/* Escritorio pequeño / tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px){
+
+  .contenedor{
+  margin: 0 auto;
+   width: 700px;
+    height: 800px; 
+    backdrop-filter: blur(6px);
+     background-color: transparent;
+      box-shadow:0 0 30px rgb(0, 0, 0);
+  }
+
+  iframe{
+    width: 600px;
+    height: 350px; 
+  }
+
+}
+
+/* Tablets y phablets */
+@media only screen and (min-width: 576px) and (max-width: 767px){
+
+  .contenedor{
+  margin: 0 auto;
+   width: 600px;
+    height: 800px; 
+    backdrop-filter: blur(6px);
+     background-color: transparent;
+      box-shadow:0 0 30px rgb(0, 0, 0);
+  }
+
+  iframe{
+    width: 500px;
+    height: 350px; 
+  }
+
+}
+
+/* Teléfonos */
+@media only screen and (max-width: 575px){
+
+  .contenedor{
+  margin: 0 auto;
+   width: 400px;
+    height: 800px; 
+    backdrop-filter: blur(6px);
+     background-color:transparent;
+      box-shadow:0 0 30px rgb(0, 0, 0);
+  }
+
+  iframe{
+    width: 350px;
+    height: 350px; 
+  }
+
+
+}
+
+
+  
+
+
+
+
+#contenedorg{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+body{
+  font-family: 'Zen Loop', cursive;
+  font-size: 20px;
+  
+}
+
+    .btn-flotante {
+      font-size: 16px;
+      /* Cambiar el tamaño de la tipografia */
+      text-transform: uppercase;
+      /* Texto en mayusculas */
+      font-weight: bold;
+      /* Fuente en negrita o bold */
+      color: #ffffff;
+      /* Color del texto */
+      border-radius: 5px;
+      /* Borde del boton */
+      letter-spacing: 2px;
+      /* Espacio entre letras */
+      background-color: #E91E63;
+      /* Color de fondo */
+      padding: 18px 30px;
+      /* Relleno del boton */
+      position: fixed;
+      bottom: 40px;
+      right: 60px;
+      transition: all 300ms ease 0ms;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+    }
+
+    .btn-flotante:hover {
+      background-color: #2c2fa5;
+      /* Color de fondo al pasar el cursor */
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-7px);
+    }
+    
+    .btn-flotanteinsta {
+     
+      border-radius: 45%;
+      /* Borde del boton */
+    
+      background-color: #d934dc;
+      /* Color de fondo */
+     
+      position: fixed;
+      bottom: 40px;
+      right: 9px;
+      transition: all 300ms ease 0ms;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+      width: 40px;
+      height: 50px;
+    }
+
+    .btn-flotanteinsta:hover {
+      background-color: #ffffff;
+      /* Color de fondo al pasar el cursor */
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-7px);
+    }
+
+    .btn-flotanteface {
+     
+     border-radius: 45%;
+     /* Borde del boton */
+   
+     background-color: #414bd2;
+     /* Color de fondo */
+    
+     position: fixed;
+     bottom: 100px;
+     right: 9px;
+     transition: all 300ms ease 0ms;
+     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+     z-index: 99;
+     width: 40px;
+     height: 50px;
+   }
+
+   .btn-flotanteface:hover {
+     background-color: #ffffff;
+     /* Color de fondo al pasar el cursor */
+     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+     transform: translateY(-7px);
+   }
+
+   .btn-flotantewsp {
+     
+     border-radius: 45%;
+     /* Borde del boton */
+   
+     background-color: #1e961a;
+     /* Color de fondo */
+    
+     position: fixed;
+     bottom: 160px;
+     right: 9px;
+     transition: all 300ms ease 0ms;
+     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+     z-index: 99;
+     width: 40px;
+     height: 50px;
+   }
+
+   .btn-flotantewsp:hover {
+     background-color: #ffffff;
+     /* Color de fondo al pasar el cursor */
+     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+     transform: translateY(-7px);
+   }
+
+    a {
+      font-size: 40pt;
+    }
+
+    .modal-contenido {
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(70px);
+      width: 100%;
+      height: 100%;
+      padding: 10px 20px;
+      margin: 10% auto;
+      position: relative;
+      color: white;
+    }
+
+    .modal {
+      background-color: rgba(0, 0, 0, 0.313);
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 50px;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 1s;
+      z-index: 100;
+    }
+
+    #miModal:target {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+
+    .botoninter {
+      background-color: rgb(244, 255, 84);
+      width: 100%;
+      height: 70px;
+      position: relative;
+      display: inline-block;
+      padding: 15px 30px;
+      transition: 0.2s;
+      border: rgba(240, 248, 255, 0.65);
+
+    }
+
+    .botoninter:hover {
+      background: rgb(255, 234, 98);
+      transform: scale(1.1);
+      transition: 0.3s;
+      box-shadow: 0 0 30px rgb(255, 255, 255);
+
+    }
+
+    
+
+  
+
+    
+    #menu ul li {
+      background-color: rgb(9, 152, 171);
+      text-shadow: 2px 2px 2px black;
+      
+      
+    }
+
+    #menu ul {
+      list-style: none;
+    }
+
+    #menu ul a {
+      display: block;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-weight: bolder;
+      font-size: 15px;
+      padding: 10px;
+      font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      
+    }
+
+
+
+    #menu ul li {
+      position: relative;
+      float: left;
+      margin: 0;
+      padding: 0;
+    }
+
+    #menu li:hover {
+      background-color: blueviolet;
+      box-shadow: 0 0 30px rgb(0, 0, 0);
+      transform: scale(1.2);
+      z-index: 1;
+      transition: 0.3s;
+     
+
+    }
+
+    
+    #menu ul ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 0;
+    }
+
+    #menu ul ul li {
+      float: none;
+      width: 160px
+    }
+
+    #menu ul ul a {
+      line-height: 120%;
+      padding: 10px 15px;
+    
+    }
+
+    #menu ul li:hover>ul {
+      display: block;
+    }
+
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    p {
+      margin: 20px;
+    }
+
+    iframe{
+      box-shadow:0 0 30px rgb(0, 0, 0);
+    }
+    h1,p{
+      text-shadow: 2px 2px 2px black;
+    }
+  </style>
+
+</head>
+
+
+<body style="zoom: 90%; " background="FONDOS/FONDOINICIO3.jpg " >
+
+  
+
+  <div id="contenedorg">
+
+
+<a href="#" class="btn-flotante">Regresar al Inicio</a>
+<a href="https://www.instagram.com/aldahir.lr/?igshid=YmMyMTA2M2Y=" class="btn-flotanteinsta"><div style="display:flex; flex-direction: column; align-items: center; justify-content: space-around; height: 50px; width: 40px;"><img src="IMAGENES/instagram.png"></div></a>
+<a href="https://wa.me/527772647018?text=Tengo%20una%20recomendacion:" class="btn-flotantewsp"><div style="display:flex; flex-direction: column; align-items: center; justify-content: space-around; height: 50px; width: 40px;"><img src="IMAGENES/whatsapp.png"></div></a>
+<a href="https://www.facebook.com/CETis-No-43-Xochitepec-116015912063288" class="btn-flotanteface"><div style="display:flex; flex-direction: column; align-items: center; justify-content: space-around; height: 50px; width: 40px;"><img src="IMAGENES/facebook.png"></div></a>
+
+
+<nav>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+  </label>
+     
+  <ul>
+    <li><a href="#miModal">Instrucciones</a></li>
+      <li><a href="#">Operaciones básicas</a></li>
+      <li><a href="#areas">Areas</a></li>
+      <li><a href="#perimetros">Perimetros</a></li>
+      
+  </ul>
+</nav>
+
+
+<marquee >
+  <h1 style=" text-shadow: 5px 2px 2px black; text-align: center; color: whitesmoke; font-size: 80px; ">.</h1>
+  </marquee>
+
+  <marquee  direction="up" behavior="slide" scrollamount="25">
+    <h1 style=" text-shadow: 5px 2px 2px black; text-align: center; color: whitesmoke; font-size: 80px; "><span style="text-align: center; color: rgb(240, 21, 240); font-size: 80px; ">MATE </span> EXPRÉS</h1>
+    </marquee>
+
+  <marquee direction="up" behavior="slide" scrollamount="6">
+    <h1 style="text-align: center; color: rgb(255, 255, 255);  font-size: 30px;">
+      Aldahir Soriano</h1>
+  </marquee>
+
+
+
+
+  <div id="miModal" class="modal">
+
+    <div class="modal-contenido">
+    </br>    </br>
+      <div style="display: flex; justify-content: space-between;"> <a href="#">Cerrar</a> <img width="80px"
+          height="100px" src="IMAGENES/niña.gif" /> </div>
+      <h2>Instrucciones</h2>
+      <p><span style="color: green;">!HOLA¡</span>, Al Mate's Te da la bienvenida.<br><br>
+
+        Tu mision, responder correctamente la mayor<br>
+        cantidad de problemas que puedas.<br><br>
+        Ey pero tranquilo, ya que contaras con video tutotiales y<br>
+        la ayuda de tu supervisor, cuando te sientas listo<br>
+        solo pulsa el boton que dice "INICIAR PRUEBA" <br><br>
+        <span style="color: red;">!!OJO¡¡</span>
+        Si dejas tu respuesta en blanco, se te contara como un error,<br>
+        Al final de las diez preguntas obtendras un resultado. Suerte ;)<br><br>
+        (Pulsa cerrar para cerra esta ventana)
+        <br>
+        -Aldahir
+      </p>
+    </div>
+
+  </div>
+
+  <div class="contenedor">
+    <div>
+      <a name="S"></a>
+
+      <a href="suma.html"><button class="botoninter" type="button">
+          <div style="margin: 0 auto; font-weight: bolder; position: relative; font-size: 20px; letter-spacing: 4px;">
+            INICIAR PRUEBA</div>
+        </button>
+    </div></a></br>
+
+    <h3
+      style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; font-size: 35pt; -webkit-text-stroke: 2px white; color: transparent;">
+      SUMA</h3>
+
+    <p style="font-size: 20pt; color: white; font-weight: bolder; text-align: center;">Sumar es juntar 2 o más cosas
+      para saber cuántas hay en total.</p>
+    <br>
+    <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/oexd_Dfic_Q"></iframe>
+    </div>
+  </div>
+  </div>
+
+  <br><br><br><br><br><br>
+
+  </div>
+
+  <div class="contenedor">
+    <div>
+      <a name="R"></a>
+
+      <a href="resta.html"><button class="botoninter" type="button">
+          <div style="margin: 0 auto; font-weight: bolder; position: relative; font-size: 20px; letter-spacing: 4px;">
+            INICIAR PRUEBA</div>
+        </button>
+    </div></a></br>
+
+    <h3
+      style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; font-size: 35pt; -webkit-text-stroke: 2px white; color: transparent;">
+      RESTA</h3>
+
+    <p style="font-size: 20pt; color: white; font-weight: bolder; text-align: center;">Restar es quitar una cantidad a
+      otra que ya teníamos. Lo contario a la suma</p>
+    <br>
+    <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/42vjqtleG9E"></iframe>
+    </div>
+  </div>
+  </div>
+
+
+
+  <br><br><br><br><br><br>
+
+  </div>
+
+  <div class="contenedor">
+    <div>
+      <a name="M"></a>
+
+      <a href="multiplicacion.html"><button class="botoninter" type="button">
+          <div style="margin: 0 auto; font-weight: bolder; position: relative; font-size: 20px; letter-spacing: 4px;">
+            INICIAR PRUEBA</div>
+        </button>
+    </div></a></br>
+
+    <h3
+      style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; font-size: 35pt; -webkit-text-stroke: 2px white; color: transparent;">
+      MULTIPLICACIÓN</h3>
+
+    <p style="font-size: 20pt; color: white; font-weight: bolder; text-align: center;">La multiplicación es una forma
+      muy rápida de sumar el mismo número una y otra vez. Por ejemplo, 2 x 3, podemos sumar el número 2, tres veces ( 2
+      + 2 + 2) o podemos hacerlo de forma mágica y veloz conociendo las tablas de multiplicar.</p>
+    <br>
+    <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/YFtEaVw5k1A"></iframe>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <br><br><br><br><br><br>
+
+  </div>
+
+  <div class="contenedor">
+    <div>
+      <a name="D"></a>
+
+      <a href="division.html"><button class="botoninter" type="button">
+          <div style="margin: 0 auto; font-weight: bolder; position: relative; font-size: 20px; letter-spacing: 4px;">
+            INICIAR PRUEBA</div>
+        </button>
+    </div></a></br>
+
+    <h3
+      style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; font-size: 35pt; -webkit-text-stroke: 2px white; color: transparent;">
+      DIVISIÓN</h3>
+
+    <p style="font-size: 20pt; color: white; font-weight: bolder; text-align: center;">Una división es una operación
+      matemática que consiste en dividir un número en partes iguales. Veamos un ejemplo: 50 : 5 (cincuenta entre cinco)
+      es repartir 50 en 5 partes iguales. Una división es la operación inversa a la multiplicación.</p>
+    <br>
+    <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/iA0fP4tL67s"></iframe>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <br><br><br><br><br><br>
+
+  </div>
+
+  <div class="contenedor">
+    <div>
+      <a name="MT"></a>
+
+      <a href="MEZCLA.html"><button class="botoninter" type="button">
+          <div style="margin: 0 auto; font-weight: bolder; position: relative; font-size: 20px; letter-spacing: 4px;">
+            INICIAR PRUEBA</div>
+        </button>
+    </div></a></br>
+
+    <h3
+      style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; font-size: 30pt;">
+      Mezcla de todas</h3>
+
+    <p style="font-size: 20pt; color: white; font-weight: bolder; text-align: center;">¿Quieres subir la dificultad?<br>
+      En esta parte se mezclan las operaciones anteriores al azar.</p>
+    <br>
+    <div style="text-align: center;">
+      <img src="IMAGENES/mimg.png" width="300px" height="200px">
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <br><br><br><br><br><br>
+
+  </div>
+  <a name="areas"></a>
+  <div class="contenedor">
+    <div>
+      <a name="AC"></a>
+
+      <a href="acirculo.html"><button class="botoninter" type="button">
+          <div style="margin: 0 auto; font-weight: bolder; position: relative; font-size: 20px; letter-spacing: 4px;">
+            INICIAR PRUEBA</div>
+        </button>
+    </div></a></br>
+
+    <h3
+      style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; font-size: 35pt; -webkit-text-stroke: 2px white; color: transparent;">
+      ÁREA CIRCULO</h3>
+
+    <p style="font-size: 20pt; color: white; font-weight: bolder; text-align: center;">El área de un círculo se refiere
+      a la medida de la superficie delimitada por una circunferencia.</p>
+    <br>
+    <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/iqefaBihj7U"></iframe>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <br><br><br><br><br><br>
+
+  </div>
+
+  <div class="contenedor">
+    <div>
+      <a name="AQ"></a>
+
+      <a href="acuadrado.html"><button class="botoninter" type="button">
+          <div style="margin: 0 auto; font-weight: bolder; position: relative; font-size: 20px; letter-spacing: 4px;">
+            INICIAR PRUEBA</div>
+        </button>
+    </div></a></br>
+
+    <h3
+      style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; font-size: 35pt; -webkit-text-stroke: 2px white; color: transparent;">
+      ÁREA CUADRADO</h3>
+
+    <p style="font-size: 20pt; color: white; font-weight: bolder; text-align: center;">El área del cuadrado es igual a
+      lado por lado.</p>
+    <br>
+    <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/S04HW02jfhQ"></iframe>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <br><br><br><br><br><br>
+
+  </div>
+
+  <div class="contenedor">
+    <div>
+      <a name="AT"></a>
+
+      <a href="atriangulo.html"><button class="botoninter" type="button">
+          <div style="margin: 0 auto; font-weight: bolder; position: relative; font-size: 20px; letter-spacing: 4px;">
+            INICIAR PRUEBA</div>
+        </button>
+    </div></a></br>
+
+    <h3
+      style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; font-size: 35pt; -webkit-text-stroke: 2px white; color: transparent;">
+      ÁREA TRIÁNGULO</h3>
+
+    <p style="font-size: 20pt; color: white; font-weight: bolder; text-align: center;">El área de un triángulo es igual
+      a base por altura partido por 2. La altura es la recta perpendicular trazada desde un vértice al lado opuesto (o
+      su prolongación).</p>
+    <br>
+    <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/lmWDi51Siq0"></iframe>
+    </div>
+  </div>
+  </div>
+
+
+
+  <br><br><br><br><br><br>
+
+  </div>
+
+  <div class="contenedor">
+    <div>
+      <a name="AR"></a>
+
+      <a href="arectangulo.html"><button class="botoninter" type="button">
+          <div style="margin: 0 auto; font-weight: bolder; position: relative; font-size: 20px; letter-spacing: 4px;">
+            INICIAR PRUEBA</div>
+        </button>
+    </div></a></br>
+
+    <h3
+      style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; font-size: 35pt; -webkit-text-stroke: 2px white; color: transparent;">
+      ÁREA RECTÁNGULO</h3>
+
+    <p style="font-size: 20pt; color: white; font-weight: bolder; text-align: center;">El área del rectángulo es igual a
+      base por altura..</p>
+    <br>
+    <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/RvshVNeMFTM"></iframe>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+<a name="perimetros"></a>
+</body>
+
+</html>
